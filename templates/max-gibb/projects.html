@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects | Max Gibb Building Services</title>
+<meta name="description" content="A portfolio of extensions, renovations, loft conversions and new builds completed by Max Gibb Building Services across [Town] and [County].">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .pcard{border-radius:10px;overflow:hidden;background:var(--cream);border:1px solid var(--line);box-shadow:var(--shadow)}
+  .pcard .ph{aspect-ratio:16/11}
+  .pcard .b{padding:26px 28px 30px}
+  .pcard .meta{font-size:12.5px;color:var(--amber-d);font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+  .pcard h3{font-size:24px;margin:8px 0 8px}
+  .pcard p{font-size:15px}
+  .feature{grid-column:1/-1;display:grid;grid-template-columns:1.3fr 1fr;gap:0}
+  .feature .ph{aspect-ratio:auto;min-height:380px}
+  .feature .b{display:flex;flex-direction:column;justify-content:center;padding:48px}
+  .stat-band{background:var(--ink);color:#c3bbac}
+  .stat-band .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat-band span{font-family:"Fraunces";font-size:42px;color:#fff;display:block;line-height:1}
+  .stat-band small{font-size:14px}
+  @media(max-width:940px){.gal{grid-template-columns:1fr}.feature{grid-template-columns:1fr}.stat-band .wrap{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><div>🏗️ Trusted local builders since 2004 — <strong>20+ years' experience</strong></div><div class="tb-right"><span>✉ info@maxgibbbuilding.co.uk</span><span>📍 [Town], [County]</span></div></div></div>
+  <header><div class="wrap"><nav>
+    <a href="index.html" class="logo"><span class="name">Max Gibb</span><span class="tag">Building Services</span></a>
+    <div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html" class="active">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="nav-cta"><a href="tel:01234567890" class="nav-phone">01234 567 890</a><a href="contact.html" class="btn btn-dark" style="padding:12px 22px">Free Consultation</a></div>
+    <button class="burger" id="burger">☰</button>
+  </nav></div></header>
+
+  <section class="page-hero">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"></div>
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Projects</div>
+      <h1>Our recent work</h1>
+      <p>Every project tells a story. Here's a selection of the homes we've helped transform across the region.</p>
+    </div>
+  </section>
+
+  <section><div class="wrap">
+    <div class="gal">
+      <div class="pcard feature">
+        <div class="ph"><span class="ph-lbl">Featured · Extension</span><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=80" alt="" onerror="this.style.display='none'"></div>
+        <div class="b"><div class="meta">Two-storey extension · [Area]</div><h3>A 1930s semi, reimagined</h3><p>We added a light-filled kitchen-diner downstairs and a master suite above, seamlessly matched to the existing brickwork. The result: a home that works beautifully for a growing family — and worth considerably more.</p></div>
+      </div>
+      <div class="pcard"><div class="ph"><span class="ph-lbl">Renovation</span><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.style.display='none'"></div><div class="b"><div class="meta">Full refurbishment · [Area]</div><h3>Victorian Terrace Restoration</h3><p>A top-to-bottom restoration blending original period features with modern, open-plan living.</p></div></div>
+      <div class="pcard"><div class="ph"><span class="ph-lbl">Loft</span><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.style.display='none'"></div><div class="b"><div class="meta">Loft conversion · [Area]</div><h3>Loft Bedroom &amp; En-Suite</h3><p>An unused loft transformed into a bright double bedroom with a walk-in shower room.</p></div></div>
+      <div class="pcard"><div class="ph"><span class="ph-lbl">New Build</span><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.style.display='none'"></div><div class="b"><div class="meta">New build · [Area]</div><h3>Detached Family Home</h3><p>A bespoke four-bedroom home delivered on time and on budget, from foundations up.</p></div></div>
+      <div class="pcard"><div class="ph"><span class="ph-lbl">Kitchen</span><img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=900&q=80" alt="" onerror="this.style.display='none'"></div><div class="b"><div class="meta">Kitchen install · [Area]</div><h3>Open-Plan Shaker Kitchen</h3><p>A bespoke kitchen-diner with handmade cabinetry and a statement island.</p></div></div>
+    </div>
+  </div></section>
+
+  <section class="stat-band"><div class="wrap">
+    <div><span>350+</span><small>Projects completed</small></div>
+    <div><span>20+</span><small>Years in business</small></div>
+    <div><span>98%</span><small>Would recommend us</small></div>
+    <div><span>10yr</span><small>Workmanship guarantee</small></div>
+  </div></section>
+
+  <section style="text-align:center"><div class="wrap" style="max-width:640px">
+    <div class="eyebrow center">Your Project Next?</div>
+    <h2 style="font-size:clamp(28px,4vw,44px)">Let's build something you'll love</h2>
+    <p style="margin:18px 0 28px">Book a free consultation and we'll talk through your ideas and give you an honest, detailed quote.</p>
+    <a href="contact.html" class="btn btn-primary">Book a Free Consultation →</a>
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="foot-grid">
+      <div><div class="logo" style="margin-bottom:16px"><span class="name" style="color:#fff">Max Gibb</span><span class="tag">Building Services</span></div><p>Award-quality extensions, renovations and new builds across [Town] and [County]. Building beautiful homes since 2004.</p></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">Extensions</a></li><li><a href="services.html">Renovations</a></li><li><a href="services.html">Loft Conversions</a></li><li><a href="services.html">New Builds</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li>📞 <a href="tel:01234567890">01234 567 890</a></li><li>✉ info@maxgibbbuilding.co.uk</li><li>📍 [Town], [County]</li></ul></div>
+    </div>
+    <div class="foot-bottom">© 2026 Max Gibb Building Services. Fully insured. All rights reserved.</div>
+  </div></footer>
+  <div class="callbar"><a href="tel:01234567890">📞 Call Max Gibb — 01234 567 890</a></div>
+  <script>document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>
+</body>
+</html>

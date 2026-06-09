@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Max Gibb Building Services</title>
+<meta name="description" content="Meet Max Gibb Building Services — a family-run team of builders with 20+ years' experience serving [Town] and [County]. Honest, reliable, and built on craftsmanship.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .story .ph{aspect-ratio:4/5;border-radius:10px;box-shadow:var(--shadow)}
+  .story h2{font-size:clamp(28px,4vw,44px);margin-bottom:20px}
+  .story p{margin-bottom:16px}
+  .values{background:var(--cream)}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .vcard{background:var(--stone);border:1px solid var(--line);border-radius:10px;padding:34px}
+  .vcard .ic{width:52px;height:52px;border-radius:11px;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-size:24px;margin-bottom:18px}
+  .vcard h3{font-size:21px;margin-bottom:8px}.vcard p{font-size:14.5px}
+  .process{background:var(--ink);color:#c3bbac}
+  .process h2{color:#fff}
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .pstep{padding-top:28px;border-top:3px solid rgba(255,255,255,.15)}
+  .pstep .n{font-family:"Fraunces";font-size:52px;color:rgba(255,255,255,.18);font-weight:700;line-height:1}
+  .pstep h4{color:#fff;font-size:20px;margin:8px 0}.pstep p{font-size:14.5px}
+  @media(max-width:940px){.story .wrap{grid-template-columns:1fr}.vgrid,.pgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><div>🏗️ Trusted local builders since 2004 — <strong>20+ years' experience</strong></div><div class="tb-right"><span>✉ info@maxgibbbuilding.co.uk</span><span>📍 [Town], [County]</span></div></div></div>
+  <header><div class="wrap"><nav>
+    <a href="index.html" class="logo"><span class="name">Max Gibb</span><span class="tag">Building Services</span></a>
+    <div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a></div>
+    <div class="nav-cta"><a href="tel:01234567890" class="nav-phone">01234 567 890</a><a href="contact.html" class="btn btn-dark" style="padding:12px 22px">Free Consultation</a></div>
+    <button class="burger" id="burger">☰</button>
+  </nav></div></header>
+
+  <section class="page-hero">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"></div>
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</div>
+      <h1>Built on craftsmanship &amp; trust</h1>
+      <p>Two decades of turning houses into homes — the right way, every time.</p>
+    </div>
+  </section>
+
+  <section class="story"><div class="wrap">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1529220502050-f15e570c634e?auto=format&fit=crop&w=1000&q=80" alt="Max Gibb on site" onerror="this.style.display='none'"></div>
+    <div>
+      <div class="eyebrow">Our Story</div>
+      <h2>From a single van to the region's trusted builder</h2>
+      <p>Max Gibb started the business back in 2004 with one van, a set of tools and a simple belief: do honest work, treat people fairly, and the rest looks after itself.</p>
+      <p>Twenty years and 350+ projects later, that belief hasn't changed. We've grown into a skilled, close-knit team — but we've kept the same hands-on, personal approach that earned us our reputation in the first place.</p>
+      <p>When you work with us, you're not a job number. You get a builder who picks up the phone, turns up when he says he will, and treats your home like his own.</p>
+    </div>
+  </div></section>
+
+  <section class="values"><div class="wrap">
+    <div class="sec-head center"><div class="eyebrow center">What We Stand For</div><h2>Our values</h2></div>
+    <div class="vgrid">
+      <div class="vcard"><div class="ic">🤝</div><h3>Honesty First</h3><p>Straight talking, fair pricing and no hidden extras. If something isn't right, we'll tell you.</p></div>
+      <div class="vcard"><div class="ic">🏆</div><h3>Quality That Lasts</h3><p>We don't cut corners. Every detail is finished to a standard we'd be happy to live with ourselves.</p></div>
+      <div class="vcard"><div class="ic">🧹</div><h3>Respect For Your Home</h3><p>We keep sites tidy, protect your space and leave it spotless. You'll barely know we were there.</p></div>
+    </div>
+  </div></section>
+
+  <section class="process"><div class="wrap">
+    <div class="sec-head center"><div class="eyebrow center" style="color:var(--gold)">How We Work</div><h2>A clear, stress-free process</h2></div>
+    <div class="pgrid">
+      <div class="pstep"><div class="n">01</div><h4>Consultation</h4><p>We visit, listen to your ideas and talk through what's possible — free and with no pressure.</p></div>
+      <div class="pstep"><div class="n">02</div><h4>Design &amp; Quote</h4><p>You receive a clear, itemised written quote and a realistic timeline.</p></div>
+      <div class="pstep"><div class="n">03</div><h4>The Build</h4><p>Our team gets to work, keeping the site tidy and you updated at every stage.</p></div>
+      <div class="pstep"><div class="n">04</div><h4>Handover</h4><p>A final walk-through to make sure you're delighted — backed by our 10-year guarantee.</p></div>
+    </div>
+  </div></section>
+
+  <section style="text-align:center"><div class="wrap" style="max-width:640px">
+    <div class="eyebrow center">Let's Talk</div>
+    <h2 style="font-size:clamp(28px,4vw,44px)">Come and meet the team</h2>
+    <p style="margin:18px 0 28px">We'd love to hear about your project. Book a free consultation and let's get started.</p>
+    <a href="contact.html" class="btn btn-primary">Book a Free Consultation →</a>
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="foot-grid">
+      <div><div class="logo" style="margin-bottom:16px"><span class="name" style="color:#fff">Max Gibb</span><span class="tag">Building Services</span></div><p>Award-quality extensions, renovations and new builds across [Town] and [County]. Building beautiful homes since 2004.</p></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">Extensions</a></li><li><a href="services.html">Renovations</a></li><li><a href="services.html">Loft Conversions</a></li><li><a href="services.html">New Builds</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li>📞 <a href="tel:01234567890">01234 567 890</a></li><li>✉ info@maxgibbbuilding.co.uk</li><li>📍 [Town], [County]</li></ul></div>
+    </div>
+    <div class="foot-bottom">© 2026 Max Gibb Building Services. Fully insured. All rights reserved.</div>
+  </div></footer>
+  <div class="callbar"><a href="tel:01234567890">📞 Call Max Gibb — 01234 567 890</a></div>
+  <script>document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>
+</body>
+</html>

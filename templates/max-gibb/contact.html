@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Free Quote | Max Gibb Building Services</title>
+<meta name="description" content="Get a free, no-obligation consultation and written quote from Max Gibb Building Services. Call 01234 567 890 or send us your project details.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-main{padding:90px 0}
+  .contact-main .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .ci{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+  .ci .ic{flex:0 0 50px;height:50px;border-radius:10px;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-size:21px}
+  .ci strong{display:block;color:var(--ink);font-size:17px}.ci span{font-size:14.5px}
+  .openhrs{margin-top:32px;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:24px 26px}
+  .openhrs h4{font-size:15px;margin-bottom:12px}
+  .openhrs .row{display:flex;justify-content:space-between;font-size:14.5px;padding:6px 0;border-bottom:1px dashed var(--line)}
+  .openhrs .row:last-child{border-bottom:none}
+  .form-card{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:40px;box-shadow:var(--shadow)}
+  .form-card h3{font-size:26px;margin-bottom:6px}.form-card .sub{font-size:14.5px;margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field input,.field select,.field textarea{width:100%;padding:14px 15px;border:1.5px solid var(--line);border-radius:8px;font-family:inherit;font-size:15px;background:var(--stone)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);background:#fff}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-card .btn{width:100%;justify-content:center}
+  .reassure{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px}
+  .map{height:340px;background:var(--stone-2);position:relative;overflow:hidden}
+  .map .ph{position:absolute;inset:0}
+  .map .pin{position:absolute;z-index:3;inset:0;display:grid;place-items:center;color:#fff;font-family:"Fraunces";font-size:20px;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+  @media(max-width:940px){.contact-main .wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><div>🏗️ Trusted local builders since 2004 — <strong>20+ years' experience</strong></div><div class="tb-right"><span>✉ info@maxgibbbuilding.co.uk</span><span>📍 [Town], [County]</span></div></div></div>
+  <header><div class="wrap"><nav>
+    <a href="index.html" class="logo"><span class="name">Max Gibb</span><span class="tag">Building Services</span></a>
+    <div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></div>
+    <div class="nav-cta"><a href="tel:01234567890" class="nav-phone">01234 567 890</a><a href="contact.html" class="btn btn-dark" style="padding:12px 22px">Free Consultation</a></div>
+    <button class="burger" id="burger">☰</button>
+  </nav></div></header>
+
+  <section class="page-hero" style="padding:120px 0 90px">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"></div>
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+      <h1>Let's build something great</h1>
+      <p>Tell us about your project and we'll get back to you within one working day.</p>
+    </div>
+  </section>
+
+  <section class="contact-main"><div class="wrap">
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+      <h2 style="font-size:clamp(26px,3.5vw,38px);margin-bottom:26px">Free, no-obligation consultations</h2>
+      <div class="ci"><div class="ic">📞</div><div><strong>01234 567 890</strong><span>Speak to Max directly</span></div></div>
+      <div class="ci"><div class="ic">✉</div><div><strong>info@maxgibbbuilding.co.uk</strong><span>We reply within one working day</span></div></div>
+      <div class="ci"><div class="ic">📍</div><div><strong>[Town], [County]</strong><span>Covering a 30-mile radius</span></div></div>
+      <div class="openhrs">
+        <h4>Opening Hours</h4>
+        <div class="row"><span>Monday – Friday</span><strong>8:00am – 6:00pm</strong></div>
+        <div class="row"><span>Saturday</span><strong>9:00am – 2:00pm</strong></div>
+        <div class="row"><span>Sunday</span><strong>Closed</strong></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Request Your Free Quote</h3>
+      <p class="sub">Fill in a few details and we'll arrange a convenient time to visit.</p>
+      <form onsubmit="return formSubmit(event)">
+        <div class="row2">
+          <div class="field"><label>Your name</label><input type="text" required></div>
+          <div class="field"><label>Phone</label><input type="tel" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="row2">
+          <div class="field"><label>Postcode</label><input type="text"></div>
+          <div class="field"><label>Project type</label><select required><option value="">Choose…</option><option>House extension</option><option>Renovation</option><option>Loft conversion</option><option>Kitchen / bathroom</option><option>New build</option><option>Other</option></select></div>
+        </div>
+        <div class="field"><label>Tell us about your project</label><textarea rows="4" placeholder="A rough idea of what you're planning, and any timescales or budget in mind…"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send My Enquiry →</button>
+        <p class="reassure">🔒 Your details are safe with us and never shared.</p>
+      </form>
+    </div>
+  </div></section>
+
+  <div class="map"><div class="ph"><img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80" alt="" onerror="this.style.display='none'"></div><div class="pin">📍 Proudly serving [Town] &amp; the surrounding 30 miles</div></div>
+
+  <footer><div class="wrap">
+    <div class="foot-grid">
+      <div><div class="logo" style="margin-bottom:16px"><span class="name" style="color:#fff">Max Gibb</span><span class="tag">Building Services</span></div><p>Award-quality extensions, renovations and new builds across [Town] and [County]. Building beautiful homes since 2004.</p></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">Extensions</a></li><li><a href="services.html">Renovations</a></li><li><a href="services.html">Loft Conversions</a></li><li><a href="services.html">New Builds</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li>📞 <a href="tel:01234567890">01234 567 890</a></li><li>✉ info@maxgibbbuilding.co.uk</li><li>📍 [Town], [County]</li></ul></div>
+    </div>
+    <div class="foot-bottom">© 2026 Max Gibb Building Services. Fully insured. All rights reserved.</div>
+  </div></footer>
+  <div class="callbar"><a href="tel:01234567890">📞 Call Max Gibb — 01234 567 890</a></div>
+  <script>
+    document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+    function formSubmit(e){e.preventDefault();alert("✅ Thanks! In the live version this enquiry goes straight to Max's inbox and phone. (This is a demo.)");e.target.reset();return false;}
+  </script>
+</body>
+</html>

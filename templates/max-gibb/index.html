@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Max Gibb Building Services | Extensions, Renovations &amp; New Builds in [Town]</title>
+<meta name="description" content="Award-quality home extensions, renovations, loft conversions and new builds across [Town] and [County]. 20+ years' experience, fully insured, 10-year workmanship guarantee.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;padding-bottom:80px}
+  .hero .ph{position:absolute;inset:0}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,17,13,.30),rgba(20,17,13,.55) 60%,rgba(20,17,13,.88))}
+  .hero .wrap{position:relative;z-index:3}
+  .hero .badge-line{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:999px;font-size:13.5px;margin-bottom:26px;backdrop-filter:blur(6px)}
+  .hero h1{color:#fff;font-size:clamp(42px,6.5vw,78px);font-weight:600;max-width:900px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p{color:#e6e0d4;font-size:20px;max-width:560px;margin:24px 0 36px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .stripbar{background:var(--ink);color:#9a9183}
+  .stripbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:36px 28px}
+  .stripbar .it span{font-family:"Fraunces";font-size:38px;color:#fff;display:block;line-height:1}
+  .stripbar .it small{font-size:13.5px;letter-spacing:.03em}
+  .intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .intro .imgstack{position:relative}
+  .intro .imgstack .ph{border-radius:10px;box-shadow:var(--shadow)}
+  .intro .imgstack .big{aspect-ratio:4/5}
+  .intro .imgstack .small{position:absolute;right:-26px;bottom:-36px;width:55%;aspect-ratio:1;border:8px solid var(--stone);border-radius:12px}
+  .intro h2{font-size:clamp(30px,4vw,46px);margin-bottom:22px}
+  .intro p{margin-bottom:18px}
+  .sign{margin-top:26px;font-family:"Fraunces";font-style:italic;font-size:22px;color:var(--ink)}
+  .sign small{display:block;font-family:"Inter";font-style:normal;font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+  .svc-preview{background:var(--cream)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc-card{background:var(--stone);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .svc-card .ph{aspect-ratio:16/11}
+  .svc-card .b{padding:26px 26px 30px}
+  .svc-card h3{font-size:22px;margin-bottom:8px}
+  .svc-card p{font-size:14.5px}
+  .svc-card .more{display:inline-block;margin-top:14px;font-weight:600;color:var(--amber-d);font-size:14px}
+  .feat-proj{background:var(--ink);color:#c3bbac}
+  .feat-proj h2{color:#fff}
+  .fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .fp{border-radius:10px;overflow:hidden}
+  .fp .ph{aspect-ratio:3/4}
+  .fp.wide{grid-column:span 1}
+  .why-band .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .why-photo{aspect-ratio:4/5;border-radius:10px;box-shadow:var(--shadow)}
+  .why-list{display:grid;gap:4px;margin-top:8px}
+  .why-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .why-item .ic{flex:0 0 48px;height:48px;border-radius:9px;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-size:21px}
+  .why-item h4{font-size:18px;margin-bottom:3px}.why-item p{font-size:14.5px}
+  .tst-band{background:var(--stone-2)}
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tst{background:var(--cream);border-radius:10px;padding:32px;border:1px solid var(--line)}
+  .tst .stars{color:var(--amber);letter-spacing:2px;margin-bottom:14px}
+  .tst .q{font-family:"Fraunces";font-size:18px;color:var(--ink);line-height:1.5;margin-bottom:20px}
+  .tst .who{display:flex;align-items:center;gap:13px}
+  .tst .av{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-family:"Fraunces"}
+  .tst .who strong{display:block;color:var(--ink)}.tst .who span{font-size:13px}
+  .cta-final{position:relative;color:#fff;text-align:center}
+  .cta-final .ph{position:absolute;inset:0}
+  .cta-final::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,17,13,.78),rgba(20,17,13,.84))}
+  .cta-final .wrap{position:relative;z-index:3}
+  .cta-final h2{color:#fff;font-size:clamp(32px,4.5vw,52px)}
+  .cta-final p{color:#e6e0d4;font-size:19px;margin:18px auto 30px;max-width:540px}
+  @media(max-width:940px){.stripbar .wrap{grid-template-columns:1fr 1fr}.intro .wrap,.why-band .wrap{grid-template-columns:1fr}.svc-grid,.fp-grid,.tst-grid{grid-template-columns:1fr}.intro .imgstack .small{display:none}}
+</style>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><div>🏗️ Trusted local builders since 2004 — <strong>20+ years' experience</strong></div><div class="tb-right"><span>✉ info@maxgibbbuilding.co.uk</span><span>📍 [Town], [County]</span></div></div></div>
+  <header><div class="wrap"><nav>
+    <a href="index.html" class="logo"><span class="name">Max Gibb</span><span class="tag">Building Services</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta"><a href="tel:01234567890" class="nav-phone">01234 567 890</a><a href="contact.html" class="btn btn-dark" style="padding:12px 22px">Free Consultation</a></div>
+    <button class="burger" id="burger">☰</button>
+  </nav></div></header>
+
+  <section class="hero">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="Modern home built by Max Gibb" onerror="this.style.display='none'"></div>
+    <div class="wrap">
+      <div class="badge-line">⭐ 4.9/5 from 80+ reviews · Fully insured · 10-year guarantee</div>
+      <h1>We build homes worth <em>coming home to</em>.</h1>
+      <p>Extensions, renovations, loft conversions and new builds — crafted across [Town] and [County] for over 20 years, with a smooth, stress-free build from first sketch to final handover.</p>
+      <div class="hero-cta"><a href="contact.html" class="btn btn-primary">Book a Free Consultation →</a><a href="projects.html" class="btn btn-outline">View Our Work</a></div>
+    </div>
+  </section>
+
+  <div class="stripbar"><div class="wrap">
+    <div class="it"><span>20+</span><small>Years building</small></div>
+    <div class="it"><span>350+</span><small>Projects completed</small></div>
+    <div class="it"><span>10yr</span><small>Workmanship guarantee</small></div>
+    <div class="it"><span>4.9★</span><small>Average client rating</small></div>
+  </div></div>
+
+  <section class="intro">
+    <div class="wrap">
+      <div class="imgstack">
+        <div class="ph big"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Builders on site" onerror="this.style.display='none'"></div>
+        <div class="ph small"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Craftsmanship detail" onerror="this.style.display='none'"></div>
+      </div>
+      <div>
+        <div class="eyebrow">Who We Are</div>
+        <h2>A family-run builder you can genuinely trust</h2>
+        <p>Max Gibb Building Services has spent two decades helping homeowners across the region create the space they've always wanted. We're not the biggest firm — and we don't want to be. We'd rather do fewer projects, exceptionally well.</p>
+        <p>From the first conversation to the final clean, you deal directly with us. No call centres, no chasing subcontractors, no nasty surprises on the invoice — just honest advice and beautiful work that lasts.</p>
+        <div class="sign">Max Gibb<small>Founder &amp; Lead Builder</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-preview">
+    <div class="wrap">
+      <div class="sec-head center"><div class="eyebrow center">What We Do</div><h2>Craftsmanship for every project</h2><p>One trusted team to manage your build from start to finish.</p></div>
+      <div class="svc-grid">
+        <div class="svc-card"><div class="ph"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Extension" onerror="this.style.display='none'"></div><div class="b"><h3>Extensions</h3><p>Single and double-storey extensions that add space, light and real value to your home.</p><a class="more" href="services.html">Learn more →</a></div></div>
+        <div class="svc-card"><div class="ph"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80" alt="Renovation" onerror="this.style.display='none'"></div><div class="b"><h3>Renovations</h3><p>Full home refurbishments that bring tired, dated properties beautifully up to date.</p><a class="more" href="services.html">Learn more →</a></div></div>
+        <div class="svc-card"><div class="ph"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Loft conversion" onerror="this.style.display='none'"></div><div class="b"><h3>Loft Conversions</h3><p>Turn unused loft space into a stunning bedroom, office or en-suite.</p><a class="more" href="services.html">Learn more →</a></div></div>
+      </div>
+      <div style="text-align:center;margin-top:44px"><a href="services.html" class="btn btn-ghost-dk">View All Services →</a></div>
+    </div>
+  </section>
+
+  <section class="feat-proj">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Recent Work</div><h2>A portfolio built on quality</h2></div>
+      <div class="fp-grid">
+        <div class="fp"><div class="ph"><span class="ph-lbl">Extension</span><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Project" onerror="this.style.display='none'"></div></div>
+        <div class="fp"><div class="ph"><span class="ph-lbl">Kitchen</span><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=800&q=80" alt="Project" onerror="this.style.display='none'"></div></div>
+        <div class="fp"><div class="ph"><span class="ph-lbl">New Build</span><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Project" onerror="this.style.display='none'"></div></div>
+      </div>
+      <div style="text-align:center;margin-top:44px"><a href="projects.html" class="btn btn-primary">See Our Projects →</a></div>
+    </div>
+  </section>
+
+  <section class="why-band">
+    <div class="wrap">
+      <div class="ph why-photo"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80" alt="Finished interior" onerror="this.style.display='none'"></div>
+      <div>
+        <div class="eyebrow">Why Max Gibb</div>
+        <h2 style="font-size:clamp(28px,4vw,44px)">Builders homeowners actually recommend</h2>
+        <div class="why-list">
+          <div class="why-item"><div class="ic">🤝</div><div><h4>One point of contact</h4><p>You deal directly with us from first sketch to final handover.</p></div></div>
+          <div class="why-item"><div class="ic">📋</div><div><h4>Honest, detailed quotes</h4><p>Everything itemised in writing up front — no hidden extras.</p></div></div>
+          <div class="why-item"><div class="ic">⏱️</div><div><h4>Delivered on schedule</h4><p>Careful planning and tight project management keep your build on track.</p></div></div>
+          <div class="why-item"><div class="ic">🏆</div><div><h4>10-year guarantee</h4><p>Our workmanship is guaranteed for a decade. That's our promise.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tst-band">
+    <div class="wrap">
+      <div class="sec-head center"><div class="eyebrow center">Client Stories</div><h2>What our clients say</h2></div>
+      <div class="tst-grid">
+        <div class="tst"><div class="stars">★★★★★</div><div class="q">"Max and his team built our rear extension and we couldn't be happier. Tidy, professional and finished bang on schedule."</div><div class="who"><div class="av">JR</div><div><strong>James &amp; Rachel</strong><span>Two-storey extension</span></div></div></div>
+        <div class="tst"><div class="stars">★★★★★</div><div class="q">"From first consultation to handover, the whole process was stress-free. The craftsmanship is genuinely outstanding."</div><div class="who"><div class="av">PH</div><div><strong>Patricia H.</strong><span>Full renovation</span></div></div></div>
+        <div class="tst"><div class="stars">★★★★★</div><div class="q">"Quoted fairly, no hidden costs, and the loft conversion has completely transformed our home. Highly recommend."</div><div class="who"><div class="av">DM</div><div><strong>David M.</strong><span>Loft conversion</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920&q=80" alt="Architecture" onerror="this.style.display='none'"></div>
+    <div class="wrap">
+      <h2>Ready to start your project?</h2>
+      <p>Book a free, no-obligation consultation and we'll bring your ideas to life.</p>
+      <a href="contact.html" class="btn btn-primary">Book Your Free Consultation →</a>
+    </div>
+  </section>
+
+  <footer><div class="wrap">
+    <div class="foot-grid">
+      <div><div class="logo" style="margin-bottom:16px"><span class="name" style="color:#fff">Max Gibb</span><span class="tag">Building Services</span></div><p>Award-quality extensions, renovations and new builds across [Town] and [County]. Building beautiful homes since 2004.</p></div>
+      <div><h4>Services</h4><ul><li><a href="services.html">Extensions</a></li><li><a href="services.html">Renovations</a></li><li><a href="services.html">Loft Conversions</a></li><li><a href="services.html">New Builds</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Get in touch</h4><ul><li>📞 <a href="tel:01234567890">01234 567 890</a></li><li>✉ info@maxgibbbuilding.co.uk</li><li>📍 [Town], [County]</li></ul></div>
+    </div>
+    <div class="foot-bottom">© 2026 Max Gibb Building Services. Fully insured. All rights reserved.</div>
+  </div></footer>
+  <div class="callbar"><a href="tel:01234567890">📞 Call Max Gibb — 01234 567 890</a></div>
+  <script>
+    document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+  </script>
+</body>
+</html>
