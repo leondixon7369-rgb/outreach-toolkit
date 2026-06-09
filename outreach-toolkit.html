@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outreach Toolkit — Web Design for Trades</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a2230;
+    --panel-2: #222d3d;
+    --line: #2e3a4d;
+    --text: #e8edf4;
+    --muted: #94a3b8;
+    --accent: #3b82f6;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #1a2230, #0f1419);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 24px;
+    position: sticky; top: 0; z-index: 10;
+  }
+  header h1 { font-size: 20px; font-weight: 700; }
+  header p { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .tabs { display: flex; gap: 4px; margin-top: 16px; }
+  .tab {
+    background: transparent; border: none; color: var(--muted);
+    padding: 10px 18px; cursor: pointer; font-size: 14px; font-weight: 600;
+    border-radius: 8px 8px 0 0; transition: .15s;
+  }
+  .tab:hover { color: var(--text); background: var(--panel-2); }
+  .tab.active { color: var(--text); background: var(--panel); border-bottom: 2px solid var(--accent); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin-bottom: 24px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .stat .num { font-size: 26px; font-weight: 700; }
+  .stat .lbl { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+  .stat.pipeline .num { color: var(--green); }
+
+  /* Form */
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .card h2 { font-size: 15px; margin-bottom: 14px; }
+  .grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 10px; }
+  input, select, textarea {
+    width: 100%; background: var(--panel-2); border: 1px solid var(--line);
+    color: var(--text); padding: 9px 11px; border-radius: 8px; font-size: 14px; font-family: inherit;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 4px; }
+  .btn {
+    background: var(--accent); color: #fff; border: none; padding: 10px 18px;
+    border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: .15s;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.ghost { background: var(--panel-2); border: 1px solid var(--line); }
+  .btn.sm { padding: 5px 10px; font-size: 12px; }
+  .btn.danger { background: transparent; color: var(--red); border: 1px solid transparent; }
+  .btn.danger:hover { background: rgba(239,68,68,.12); }
+  .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .toolbar .spacer { flex: 1; }
+  .search { max-width: 240px; }
+
+  /* Lead table */
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: middle; }
+  tr:hover td { background: rgba(255,255,255,.02); }
+  .biz strong { display: block; }
+  .biz span { color: var(--muted); font-size: 12px; }
+  select.status { padding: 5px 8px; font-size: 12px; font-weight: 600; border-radius: 999px; }
+  .status-tocall { color: var(--muted); }
+  .status-called { color: var(--accent); }
+  .status-demosent { color: var(--purple); }
+  .status-followup { color: var(--amber); }
+  .status-won { color: var(--green); }
+  .status-lost { color: var(--red); }
+  .empty { text-align: center; color: var(--muted); padding: 48px 16px; }
+  .empty svg { opacity: .4; margin-bottom: 12px; }
+  .overdue { color: var(--red); font-weight: 600; }
+  .due-soon { color: var(--amber); }
+  a.link { color: var(--accent); text-decoration: none; }
+  a.link:hover { text-decoration: underline; }
+
+  /* Scripts */
+  .script-block { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .script-block h3 { font-size: 15px; margin-bottom: 6px; color: var(--accent); }
+  .script-block h4 { font-size: 13px; margin: 14px 0 4px; color: var(--amber); }
+  .script-block p, .script-block blockquote { font-size: 14px; margin-bottom: 8px; }
+  .script-block blockquote {
+    border-left: 3px solid var(--accent); padding: 8px 12px; background: var(--panel-2);
+    border-radius: 0 8px 8px 0; color: #cdd8e6; font-style: italic;
+  }
+  .tip { font-size: 13px; color: var(--muted); }
+  .note { font-size: 12px; color: var(--muted); font-style: italic; }
+  .muted-small { font-size: 12px; color: var(--muted); }
+
+  @media print {
+    header, .tabs, .no-print { display: none !important; }
+    body { background: #fff; color: #000; }
+    .script-block { border: 1px solid #ccc; break-inside: avoid; }
+    .script-block blockquote { background: #f4f4f4; color: #000; }
+    .view { display: block !important; }
+    #view-leads, #view-add { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🛠️ Outreach Toolkit</h1>
+  <p>Win web design clients in the trades — track leads &amp; never miss a follow-up. Saves to this browser automatically.</p>
+  <div class="tabs">
+    <button class="tab active" data-tab="leads">📋 Lead Tracker</button>
+    <button class="tab" data-tab="scripts">💬 Scripts</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ LEAD TRACKER ============ -->
+  <div class="view active" id="view-leads">
+    <div class="stats">
+      <div class="stat"><div class="num" id="s-total">0</div><div class="lbl">Total Leads</div></div>
+      <div class="stat"><div class="num" id="s-demos">0</div><div class="lbl">Demos Sent</div></div>
+      <div class="stat"><div class="num" id="s-followup">0</div><div class="lbl">Need Follow-up</div></div>
+      <div class="stat"><div class="num" id="s-won">0</div><div class="lbl">Clients Won</div></div>
+      <div class="stat pipeline"><div class="num" id="s-pipeline">£0</div><div class="lbl">Won Setup Value</div></div>
+    </div>
+
+    <div class="card">
+      <h2>➕ Add a lead</h2>
+      <div class="grid-form">
+        <div><label>Business name *</label><input id="f-name" placeholder="e.g. Smith &amp; Sons Plumbing"></div>
+        <div><label>Contact name</label><input id="f-contact" placeholder="e.g. Dave"></div>
+        <div><label>Phone</label><input id="f-phone" placeholder="07..."></div>
+        <div><label>Website / source</label><input id="f-web" placeholder="old site URL or 'none'"></div>
+        <div><label>Setup quote (£)</label><input id="f-value" type="number" placeholder="500"></div>
+        <div><label>Status</label>
+          <select id="f-status">
+            <option value="tocall">To call</option>
+            <option value="called">Called</option>
+            <option value="demosent">Demo sent</option>
+            <option value="followup">Follow-up</option>
+            <option value="won">Won</option>
+            <option value="lost">Lost</option>
+          </select>
+        </div>
+        <div><label>Follow-up date</label><input id="f-date" type="date"></div>
+        <div style="grid-column: 1/-1"><label>Notes</label><input id="f-notes" placeholder="e.g. likes the demo, ring back Friday"></div>
+      </div>
+      <div style="margin-top:14px"><button class="btn" id="addBtn">Add lead</button></div>
+    </div>
+
+    <div class="toolbar">
+      <input class="search" id="search" placeholder="🔍 Search leads...">
+      <select id="filter" style="max-width:160px">
+        <option value="all">All statuses</option>
+        <option value="tocall">To call</option>
+        <option value="called">Called</option>
+        <option value="demosent">Demo sent</option>
+        <option value="followup">Follow-up</option>
+        <option value="won">Won</option>
+        <option value="lost">Lost</option>
+      </select>
+      <div class="spacer"></div>
+      <button class="btn ghost sm" id="exportBtn">⬇ Export CSV</button>
+    </div>
+
+    <div class="card" style="padding:0; overflow-x:auto">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Business</th><th>Phone</th><th>Status</th><th>Follow-up</th><th>Quote</th><th>Notes</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div class="empty" id="empty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4M9 17l3 4 3-4"/></svg>
+        <div>No leads yet. Add your first one above and start dialling. 📞</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <div class="view" id="view-scripts">
+    <div class="no-print" style="margin-bottom:16px; display:flex; gap:8px; align-items:center;">
+      <button class="btn ghost sm" onclick="window.print()">🖨️ Print this sheet</button>
+      <span class="muted-small">Tip: always lead with the free demo, never the pitch.</span>
+    </div>
+
+    <div class="script-block">
+      <h3>📞 Cold Call — Opening</h3>
+      <p class="tip">The first 10 seconds decide everything. Be quick, be human.</p>
+      <blockquote>"Hi, is that [Name]? ... Hi [Name], my name's [Your Name] — I'll be quick, I know you're busy. I build websites for [plumbers/roofers] round [town], and I redesigned yours as a free demo to show you what it could look like. Is it alright if I text or email you the link to have a look? No charge, no catch."</blockquote>
+      <h4>If they say yes:</h4>
+      <blockquote>"Brilliant — what's the best number or email? ... Perfect, I'll fire it over now. Have a look when you get two minutes, and if you like it I can have the full thing live this week. If not, no worries at all — keep the demo."</blockquote>
+      <p class="note">Send the demo immediately while on the call or right after.</p>
+    </div>
+
+    <div class="script-block">
+      <h3>🛡️ Objection Handling</h3>
+
+      <h4>"Why do I need this? I get all my work word of mouth."</h4>
+      <blockquote>"Honestly, that's the best kind of work to have — and I'm not trying to replace it. Here's the thing though: when someone recommends you, the first thing the new customer does is Google you before they ring. If they find nothing, or an old site, some of them hesitate or go with the next name. A proper site just makes sure the referrals you're already getting actually pick up the phone — it backs up your reputation instead of letting it leak. That's all it does."</blockquote>
+      <p class="note">Don't attack word-of-mouth. Reframe the site as plugging a leak in referrals they already get.</p>
+
+      <h4>"How much is it?"</h4>
+      <blockquote>"Setup's [£450–600] one-off, then [£50] a month to host it, keep it running and make any changes you need. But genuinely — have a look at the demo first, no point talking money until you've seen if you even like it."</blockquote>
+
+      <h4>"I already have someone who does my website."</h4>
+      <blockquote>"No problem at all. Mind if I send the demo anyway? Costs you nothing to compare — if yours is already better, you'll know in ten seconds and I'll leave you be."</blockquote>
+
+      <h4>"I'm not interested / haven't got time."</h4>
+      <blockquote>"Totally fair, I'll not keep you. I'll just text the demo link over so it's there if you ever fancy a look — sound alright? Cheers [Name], take care."</blockquote>
+
+      <h4>"Is this a scam / who are you again?"</h4>
+      <blockquote>"Ha, fair question — no, I'm local, I build sites for trades round here. There's nothing to buy on the phone. I just made you a free demo and wanted you to see it. I'll text it from this number now so you've got my details."</blockquote>
+    </div>
+
+    <div class="script-block">
+      <h3>💬 Follow-Up Texts</h3>
+      <h4>Right after the call:</h4>
+      <blockquote>Hi [Name], [Your Name] here — great speaking with you. Here's the free demo I made for your site: [link]<br><br>Have a look when you get a sec. Happy to tweak anything or get it live this week if you like it 👍</blockquote>
+      <h4>Next day (no reply):</h4>
+      <blockquote>Hi [Name], did the demo come through ok? No rush — just shout if you've any questions or want any changes made.</blockquote>
+      <h4>3–4 days later (then leave it):</h4>
+      <blockquote>Hey [Name], I'll leave you in peace after this! The demo's yours to keep either way — link's here again if it's handy: [link]. Cheers 🙂</blockquote>
+    </div>
+
+    <div class="script-block">
+      <h3>📩 Facebook / Instagram DM</h3>
+      <blockquote>Hi [Name] 👋 I build websites for [roofers] around [town]. I redesigned yours as a free demo to show what it could look like — here's the link: [demo]<br><br>No charge and no catch. If you like it I can get the full site live this week; if not, keep the demo, no worries at all 🙂</blockquote>
+      <h4>DM follow-up (2 days later):</h4>
+      <blockquote>Hi [Name], just checking the demo link came through ok? Happy to change anything on it 👍</blockquote>
+    </div>
+
+    <div class="script-block">
+      <h3>✅ Two rules that make it convert</h3>
+      <p>1. <strong>Lead with the demo, never the pitch.</strong> "I built you something free" gets a yes; "can I sell you a website" gets a no.</p>
+      <p>2. <strong>Follow up.</strong> Aim for ~30 touches a day. Most sales happen on the 2nd–4th contact, not the first — that's what the tracker is for.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const STORE = 'outreach_leads_v1';
+  let leads = JSON.parse(localStorage.getItem(STORE) || '[]');
+
+  const statusLabels = {
+    tocall: 'To call', called: 'Called', demosent: 'Demo sent',
+    followup: 'Follow-up', won: 'Won', lost: 'Lost'
+  };
+
+  function save() { localStorage.setItem(STORE, JSON.stringify(leads)); }
+
+  function fmtDate(d) {
+    if (!d) return '—';
+    const date = new Date(d + 'T00:00:00');
+    const today = new Date(); today.setHours(0,0,0,0);
+    const diff = Math.round((date - today) / 86400000);
+    const str = date.toLocaleDateString('en-GB', { day:'numeric', month:'short' });
+    if (diff < 0) return '<span class="overdue">'+str+' (overdue)</span>';
+    if (diff === 0) return '<span class="overdue">Today</span>';
+    if (diff <= 2) return '<span class="due-soon">'+str+'</span>';
+    return str;
+  }
+
+  function esc(s){ return (s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+  function render() {
+    const q = document.getElementById('search').value.toLowerCase();
+    const filter = document.getElementById('filter').value;
+    const tbody = document.getElementById('tbody');
+    tbody.innerHTML = '';
+
+    let list = leads.filter(l => {
+      const matchQ = !q || (l.name+l.contact+l.notes+l.phone).toLowerCase().includes(q);
+      const matchF = filter === 'all' || l.status === filter;
+      return matchQ && matchF;
+    });
+
+    document.getElementById('empty').style.display = leads.length === 0 ? 'block' : 'none';
+
+    list.forEach(l => {
+      const tr = document.createElement('tr');
+      const opts = Object.keys(statusLabels).map(k =>
+        `<option value="${k}" ${l.status===k?'selected':''}>${statusLabels[k]}</option>`).join('');
+      const phoneCell = l.phone ? `<a class="link" href="tel:${esc(l.phone)}">${esc(l.phone)}</a>` : '—';
+      tr.innerHTML = `
+        <td class="biz"><strong>${esc(l.name)}</strong><span>${esc(l.contact||'')}${l.web?' · '+esc(l.web):''}</span></td>
+        <td>${phoneCell}</td>
+        <td><select class="status status-${l.status}" data-id="${l.id}">${opts}</select></td>
+        <td>${fmtDate(l.date)}</td>
+        <td>${l.value?('£'+l.value):'—'}</td>
+        <td>${esc(l.notes||'')}</td>
+        <td><button class="btn danger sm" data-del="${l.id}">✕</button></td>`;
+      tbody.appendChild(tr);
+    });
+
+    // stats
+    document.getElementById('s-total').textContent = leads.length;
+    document.getElementById('s-demos').textContent = leads.filter(l=>['demosent','followup','won'].includes(l.status)).length;
+    document.getElementById('s-followup').textContent = leads.filter(l=>l.status==='followup').length;
+    document.getElementById('s-won').textContent = leads.filter(l=>l.status==='won').length;
+    const pipe = leads.filter(l=>l.status==='won').reduce((s,l)=>s+(parseInt(l.value)||0),0);
+    document.getElementById('s-pipeline').textContent = '£'+pipe.toLocaleString();
+  }
+
+  document.getElementById('addBtn').addEventListener('click', () => {
+    const name = document.getElementById('f-name').value.trim();
+    if (!name) { alert('Business name is required'); return; }
+    leads.unshift({
+      id: Date.now().toString(),
+      name,
+      contact: document.getElementById('f-contact').value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      web: document.getElementById('f-web').value.trim(),
+      value: document.getElementById('f-value').value.trim(),
+      status: document.getElementById('f-status').value,
+      date: document.getElementById('f-date').value,
+      notes: document.getElementById('f-notes').value.trim()
+    });
+    save(); render();
+    ['f-name','f-contact','f-phone','f-web','f-value','f-date','f-notes'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('f-name').focus();
+  });
+
+  document.getElementById('tbody').addEventListener('change', e => {
+    if (e.target.classList.contains('status')) {
+      const l = leads.find(x => x.id === e.target.dataset.id);
+      if (l) { l.status = e.target.value; save(); render(); }
+    }
+  });
+
+  document.getElementById('tbody').addEventListener('click', e => {
+    if (e.target.dataset.del) {
+      leads = leads.filter(x => x.id !== e.target.dataset.del);
+      save(); render();
+    }
+  });
+
+  document.getElementById('search').addEventListener('input', render);
+  document.getElementById('filter').addEventListener('change', render);
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const rows = [['Business','Contact','Phone','Website','Status','Follow-up','Quote','Notes']];
+    leads.forEach(l => rows.push([l.name,l.contact,l.phone,l.web,statusLabels[l.status],l.date,l.value,l.notes]));
+    const csv = rows.map(r => r.map(c => '"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');
+    const blob = new Blob([csv], {type:'text/csv'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'leads.csv';
+    a.click();
+  });
+
+  // tabs
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('view-'+t.dataset.tab).classList.add('active');
+  }));
+
+  render();
+</script>
+</body>
+</html>
